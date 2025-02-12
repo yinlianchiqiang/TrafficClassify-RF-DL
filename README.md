@@ -19,7 +19,7 @@ pip freeze > requirements.txt
 - 開啟虛擬環境
   .\venv\Scripts\activate
 
-## 指令 (單封包/single packet)
+## 指令 (單封包)
 
 1. 預處理
 
@@ -27,7 +27,7 @@ pip freeze > requirements.txt
 py -m 01_preprocess.p_single_packet
 ```
 
-## 指令 (多封包/multiple packets)
+## 指令 (多封包)
 
 1. 預處理 (基本處理 + 從封包取出需要用的欄位)
 
@@ -43,13 +43,13 @@ py -m 01_preprocess.p_graphlet_2
 
 ## 指令
 
-1. 切分資料集 split Dataset
+1. 切分資料集
 
 ```js
 py -m 02_splitDataset.split_dataset
 ```
 
-2. 集中式學習 centralized learning
+2. 集中式學習
 
 - CNN
 
@@ -83,4 +83,46 @@ py -m 04_train_fl.client -i 1
 
 ```js
 py -m 04_train_fl.fl_rf
+```
+- DNN
+```js
+py -m 03_train.t_dnn
+
+py -m 04_train_fl.fl_dnn_server
+py -m 04_train_fl.fl_dnn_client -i 0
+py -m 04_train_fl.fl_dnn_client -i 1
+```
+
+5. CAE
+```js
+py -m 03_autoencoder.cae
+
+py -m 04_train_fl.fl_cae_server
+py -m 04_train_fl.fl_cae_client -i 0
+py -m 04_train_fl.fl_cae_client -i 1
+```
+
+6. CAE 2D Graphlet
+```js
+py -m 03_autoencoder.cae_2d_graphlet
+
+py -m 04_train_fl.fl_cae_2d_graphlet_server
+py -m 04_train_fl.fl_cae_2d_graphlet_client -i 0
+py -m 04_train_fl.fl_cae_2d_graphlet_client -i 1
+```
+
+
+7. AE 2D Graphlet
+```js
+py -m 03_autoencoder.ae_2d_graphlet
+
+py -m 04_train_fl.fl_ae_2d_graphlet_server
+py -m 04_train_fl.fl_ae_2d_graphlet_client -i 0
+py -m 04_train_fl.fl_ae_2d_graphlet_client -i 1
+```
+
+8. 2D Graphlet trans data
+
+```
+py -m 03_autoencoder.2d_graphlet_trans_data
 ```
