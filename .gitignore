@@ -1,0 +1,14 @@
+*.pcap
+*.pcapng
+*.pickle
+*.pyc
+*.h5
+*.params
+*.csv
+*.log
+*.npz
+
+train_data/
+data/
+
+log/
